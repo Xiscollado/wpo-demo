@@ -159,3 +159,20 @@ $(document).ready(function(){
     $(function() {
     	$("img.lazy").lazyload();
     });
+
+    function createIframe(){
+    	var i = document.createElement("iframe");
+    	i.src = "https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d48386.401887313725!2d-73.9407136!3d40.7147117!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sua!4v1402409149092";
+    	i.scrolling = "auto";
+    	i.frameborder = "0";
+    	i.width = "100%";
+    	i.height = "750px";
+    	document.getElementById("mapIframe").appendChild(i);
+    };
+
+// Check for browser support of event handling capability
+if (window.addEventListener)
+	window.addEventListener("load", createIframe, false);
+else if (window.attachEvent)
+	window.attachEvent("onload", createIframe);
+else window.onload = createIframe;
