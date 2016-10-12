@@ -19,13 +19,24 @@ gulp.task('js', function(){
    	])
    .pipe(concat('script.js'))
    .pipe(uglify())
-   .pipe(gulp.dest('js'));
+   .pipe(gulp.dest('dist'));
 });
 
 gulp.task('css', function() {
-  return gulp.src('styles/*.css')
-    .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(concat('styles.css'))
+  gulp.src([
+      'css/bootstrap.css',
+      'css/font-awesome.css',
+      'css/camera.css',
+      'css/slicknav.css',
+      'css/prettyPhoto.css',
+      'css/style.css'
+    ])
+    .pipe(cleanCSS({
+      'advanced' : true,
+      'debug' : true,
+      'keepSpecialComments' : 0
+    }))
+    .pipe(concat('style.css'))
     .pipe(gulp.dest('dist'));
 });
 
