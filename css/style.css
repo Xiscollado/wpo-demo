@@ -1753,7 +1753,7 @@ textarea {
 	overflow: hidden;
 	height: 100%;
 	
-	background: url(../images/bgFooter.png)  no-repeat;
+	background: url(../images/bgFooter.jpg)  no-repeat;
 	background:#101010;
 }
 .downLine{
@@ -1776,7 +1776,7 @@ textarea {
 	left: 0;
 	width: 100%;
 	height: 178px;
-	background: url(../images/bgBeforFooter.png) center center no-repeat;
+	background: url(../images/bgBeforFooter.jpg) center center no-repeat;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -1835,6 +1835,9 @@ textarea {
 	.headerLine, .line2, .line3, .line4, .line5, .line7{
 		background: url(../images/bgTop_med.jpg) center center no-repeat;
 	}
+	.lineBlack:before{
+		background: url(../images/bgBeforFooter_med.jpg) center center no-repeat;
+	}
 }
 
 
@@ -1847,6 +1850,9 @@ textarea {
 @media screen and (max-width: 1024px){
 	.headerLine, .line2, .line3, .line4, .line5, .line7{
 		background: url(../images/bgTop_small.jpg) center center no-repeat;
+	}
+		.lineBlack:before{
+		background: url(../images/bgBeforFooter_small.jpg) center center no-repeat;
 	}
 }
 
@@ -1891,11 +1897,17 @@ textarea {
 	.headerLine, .line2, .line3, .line4, .line5, .line7{
 		background: url(../images/bgTop_xsmall.jpg) center center no-repeat;
 	}
+		.lineBlack:before{
+		background: url(../images/bgBeforFooter_xsmall.jpg) center center no-repeat;
+	}
 }
 
 @media screen and (max-width: 475px){
 	.headerLine, .line2, .line3, .line4, .line5, .line7{
 		background: url(../images/bgTop_mobile.jpg) center center no-repeat;
+	}
+		.lineBlack:before{
+		background: url(../images/bgBeforFooter_mobile.jpg) center center no-repeat;
 	}
 }
 
