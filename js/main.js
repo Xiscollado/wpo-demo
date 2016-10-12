@@ -170,9 +170,4 @@ $(document).ready(function(){
     	document.getElementById("mapIframe").appendChild(i);
     };
 
-// Check for browser support of event handling capability
-if (window.addEventListener)
-	window.addEventListener("load", createIframe, false);
-else if (window.attachEvent)
-	window.attachEvent("onload", createIframe);
-else window.onload = createIframe;
+    createIframe();
