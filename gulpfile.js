@@ -1,7 +1,16 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
-var cleanCSS = require('gulp-clean-css');
+var cleanCSS = require('gulp-clean-css'); 
+var uncss = require('gulp-uncss');
+
+gulp.task('uncss', function () {  
+    return gulp.src(['css/bootstrap.css','css/font-awesome.css'])
+        .pipe(uncss({
+            html: ['index.html']
+        }))
+        .pipe(gulp.dest('css/cleancss'));
+});
 
 gulp.task('js', function(){
    gulp.src([
@@ -24,8 +33,9 @@ gulp.task('js', function(){
 
 gulp.task('css', function() {
   gulp.src([
-      'css/bootstrap.css',
-      'css/font-awesome.css',
+      'css/normalize.css',
+      'css/cleancss/bootstrap.css',
+      'css/cleancss/font-awesome.css',
       'css/camera.css',
       'css/slicknav.css',
       'css/prettyPhoto.css',
@@ -40,5 +50,5 @@ gulp.task('css', function() {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('default',['js','css'],function(){
+gulp.task('default',['uncss','js','css'],function(){
 });
