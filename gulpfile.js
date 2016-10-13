@@ -43,7 +43,6 @@ gulp.task('css', function() {
     ])
     .pipe(cleanCSS({
       'advanced' : true,
-      'debug' : true,
       'keepSpecialComments' : 0
     }))
     .pipe(concat('style.css'))
